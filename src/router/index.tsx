@@ -6,6 +6,7 @@ export function Router() {
     <Routes>
       <Route path="*" element={<P.Login />} />
       <Route path="/Login" element={<P.Login />} />
+      <Route path="/Register" element={<P.Register />} />
     </Routes>
   );
 }
