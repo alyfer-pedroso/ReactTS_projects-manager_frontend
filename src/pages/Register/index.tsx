@@ -5,7 +5,7 @@ import { Button, Input, Label } from "@/components/ui";
 export function Register() {
   return (
     <main className="bg-slate-200 w-full h-screen pt-[25%] landscape:pt-[10%] flex flex-col items-center gap-16">
-      <h1 className="text-3xl font-bold flex items-center gap-4 [&>strong]:text-5xl">
+      <h1 className="text-3xl font-bold flex items-center gap-4 [&>strong]:text-5xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.5)]">
         Projects Manager <strong>{<FaProjectDiagram />}</strong>
       </h1>
       <form id="l_form" className="bg-white shadow-lg w-[80%] landscape:max-w-[350px] border-t-4 border-t-slate-700">
