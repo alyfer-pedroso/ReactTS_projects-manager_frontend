@@ -3,21 +3,22 @@ import { FaProjectDiagram } from "react-icons/fa";
 
 import { Button, Input, Label } from "@/components/ui";
 
+import * as S from "./styles";
 import { useRegister } from "./hooks";
 
 export function Register() {
   const { username, password, confirmPassword, setConfirmPassword, handleSubmit, setUsername, setPassword } = useRegister();
 
   return (
-    <main className="bg-slate-200 w-full h-screen pt-[25%] landscape:pt-[10%] flex flex-col items-center gap-16">
-      <h1 className="text-3xl font-bold flex items-center gap-4 [&>strong]:text-5xl drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.5)]">
+    <S.Main>
+      <S.Title>
         Projects Manager <strong>{<FaProjectDiagram />}</strong>
-      </h1>
+      </S.Title>
 
-      <form id="l_form" className="bg-white shadow-lg w-[80%] landscape:max-w-[350px] border-t-4 border-t-slate-700" onSubmit={handleSubmit}>
-        <h2 className="text-center mt-4 text-2xl font-bold">Cadastrar-se</h2>
+      <S.Form id="l_form" onSubmit={handleSubmit}>
+        <S.Subtitle>Cadastrar-se</S.Subtitle>
 
-        <div className="p-6 flex flex-col gap-4">
+        <S.Container>
           <Label htmlFor="username">
             <Input type="text" id="username" placeholder="Usuário" value={username} onChange={(e) => setUsername(e.target.value)} />
           </Label>
@@ -37,8 +38,8 @@ export function Register() {
             Já possui uma conta? <strong className="font-bold">Clique aqui</strong>
           </Link>
           <Button type="submit">Registrar</Button>
-        </div>
-      </form>
-    </main>
+        </S.Container>
+      </S.Form>
+    </S.Main>
   );
 }
